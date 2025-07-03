@@ -1,0 +1,491 @@
+@import url("./loco.css");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Quicksand:wght@300..700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100vh;
+}
+
+::selection {
+  color: rgb(255, 111, 27);
+}
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  font-size: 2rem;
+  z-index: 9999;
+  transition: opacity 0.5s ease;
+}
+
+#main {
+  width: 100%;
+  min-height: 100vh;
+  padding: 30px 5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: "Quicksand", sans-serif;
+  /* position: relative;
+  z-index: 1; */
+}
+
+nav {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#menu {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+}
+
+#menu h5 {
+  font-size: 1rem;
+  height: 100%;
+  padding: 1.5vh 1.2vw;
+  border-radius: 30px;
+  border: 1px solid #000;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+#menu h5::after {
+  content: "";
+  background: #000;
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  height: 10%;
+  width: 10%;
+  z-index: -1;
+  border-radius: 50px;
+  transition: all 0.5s ease-in-out;
+}
+
+#menu h5:hover {
+  color: rgb(255, 255, 255);
+  transition: all 0.5s ease;
+}
+
+#menu h5:hover::after {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+#menu i {
+  font-size: 1.5rem;
+  padding: 1vh 1.2vw;
+  border-radius: 30px;
+  border: 1px solid #000;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+#menu i::after {
+  content: "";
+  background: #00000000;
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  height: 10%;
+  width: 10%;
+  z-index: -1;
+  border-radius: 50px;
+  transition: all 0.5s ease-in-out;
+}
+
+#menu i:hover {
+  color: rgb(255, 255, 255);
+}
+
+#menu i:hover::after {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: #000000;
+}
+
+#tooth h5 {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+#tooth {
+  display: flex;
+  align-items: center;
+}
+
+#tooth i {
+  font-size: 1.5rem;
+  padding: 1vh 1vh;
+  border-radius: 30px;
+  background-color: orangered;
+  color: antiquewhite;
+  margin-right: 10px;
+}
+
+#logsign {
+  display: flex;
+  align-items: center;
+}
+
+#logsign #login {
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 1.2vh 1vw;
+  border-radius: 30px;
+  border: 1px solid #000;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+#logsign #login::after {
+  content: "";
+  background: #000;
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  height: 10%;
+  width: 10%;
+  z-index: -1;
+  border-radius: 50px;
+  transition: all 0.5s ease-in-out;
+}
+
+#logsign #login:hover {
+  color: rgb(255, 255, 255);
+  transition: all 0.5s ease;
+}
+
+#logsign #login:hover::after {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+#logsign #signup {
+  font-size: 1rem;
+  padding: 1.2vh 1vw;
+  background-color: orangered;
+  border-radius: 30px;
+  position: relative;
+  overflow: hidden;
+  color: white;
+  z-index: 1;
+  transition: color 0.5s ease;
+}
+
+#logsign #signup::after {
+  content: "";
+  background: #ffdaaf;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 10%;
+  width: 10%;
+  z-index: -1;
+  border-radius: 50px;
+  transition: all 0.5s ease;
+}
+
+#logsign #signup:hover {
+  color: orangered; /* matches background color */
+}
+
+#logsign #signup:hover::after {
+  top: 0;
+  left: 0;
+  transform: none;
+  height: 100%;
+  width: 100%;
+  border-radius: 30px;
+}
+
+/* Hero Section */
+#hero {
+  font-family: "DM Sans";
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+#hero h1 {
+  font-size: 10rem;
+  font-weight: 400;
+}
+
+#hero img {
+  position: absolute;
+  height: 400px;
+  width: 300px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 30px;
+  box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+#hero .card:nth-child(1) {
+  z-index: 15;
+}
+
+#hero .card:nth-child(2) {
+  z-index: 10;
+}
+
+#hero .card:nth-child(3) {
+  z-index: 5;
+}
+
+/* About Section */
+#about {
+  font-family: "DM Sans", sans-serif;
+  width: 100%;
+  min-height: 100vh;
+  padding: 30px 5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: "DM Sans", sans-serif;
+}
+
+#about #hero-about {
+  width: 100%;
+  height: fit-content;
+  font-size: 3.5rem;
+  margin-top: 15vh;
+  display: flex;
+  flex-direction: column;
+  justify-self: flex-end;
+  align-items: flex-end;
+  /* background-color: red; */
+}
+
+.pop {
+  overflow: hidden;
+  position: relative;
+  height: 120px;
+}
+
+.pop h1 {
+  position: relative;
+  transform: translateY(100%);
+  transition: transform 0.5s ease;
+}
+
+#about #hero-about .pop:nth-child(2) {
+  align-self: flex-start;
+}
+
+#about #hero-about h1 {
+  font-weight: 400;
+}
+
+#end {
+  font-family: "DM Sans", sans-serif;
+  width: 100%;
+  min-height: 100vh;
+  height: 100vh;
+  padding: 30px 5vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: "DM Sans", sans-serif;
+}
+
+#end #menuspace {
+  width: 100%;
+  height: 60px;
+  background-color: green;
+}
+
+#end #hero {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  padding-right: 50px;
+  /* padding-left: -45%;   */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  /* background-color: green; */
+}
+
+#end #hero button {
+  margin-top: 20px;
+}
+
+#end #hero button {
+  width: 200px;
+  height: 70px;
+  color: #fff;
+  background-color: orangered;
+  border: rgb(167, 45, 0);
+  border-radius: 20px;
+  font-size: 1.3rem;
+  font-family: "Quicksand", sans-serif;
+  color: white";
+}
+
+
+#end #heroleft {
+  width: 100%;
+  margin-top: 15vh;
+}
+
+#end #heroleft .pop {
+  overflow: hidden;
+  position: relative;
+  height: 100px;
+}
+
+#end #heroleft h1 {
+  font-size: 4.8rem;
+  width: 100%;
+}
+
+.swiper {
+  width: 600px;
+  height: 100%;
+}
+
+.swip1 #swip {
+  width: 250px;
+  height: 300px;
+  border-radius: 20px;
+  margin: 10px 0;
+}
+
+.swip2 #swip {
+  width: 250px;
+  height: 300px;
+  border-radius: 20px;
+  margin: 10px 0;
+}
+
+.swiper-wrapper {
+  transition-timing-function: ease-in-out !important;
+}
+
+
+/* Footer */
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 10px;
+}
+
+footer #mention {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+footer #mention #icons {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+#icons .popicon {
+  overflow: hidden;
+  /* height: 5vh;
+  width: 2vw; */
+}
+
+#icons i {
+  font-size: 1.5rem;
+  /* transform: translateY(100%); */
+  transition: transform 0.5s ease;
+}
+
+.footer {
+  background-image: -o-repeating-linear-gradient(90, orangered, white);
+  color: #000;
+  padding: 40px 20px;
+  font-family: sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.footer-about h2 {
+  color: #000;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.footer-about p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #000;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-socials a {
+  color: #000;
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.3s ease;
+}
+
+.footer-socials a:hover {
+  color: #000;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 12px;
+  color: #000;
+  margin-top: 30px;
+}
